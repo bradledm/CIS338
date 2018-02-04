@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+  <TITLE>Final exam for CIS 338 gradeReport.html</TITLE>
+  <SCRIPT LANGUAGE = "JavaScript">
+    
+    var studentFullName = new Array(100);
+    var studentAge = new Array(100);
+    var studentGrade = new Array(100);
+    
+    var totalStudents = 0;
+    var totalStudentGrade = 0;
+    var avgGrade = 0;
+    var ageBelow20 = 0, ageBelow30 = 0, ageBelow40 = 0, ageAbove40 = 0;
+    var AStudents = 0, BStudents = 0, CStudents = 0, DStudents = 0, FStudents = 0, failedStudents = 0;
+
+    var ATable = new Array(3);
+        ATable[0] = new Array(3);
+        ATable[1] = new Array(3);
+        ATable[2] = new Array(3);
+    
+    var BTable = new Array(3);
+        BTable[0] = new Array(3);
+        BTable[1] = new Array(3);
+        BTable[2] = new Array(3);
+
+    var CTable = new Array(3);
+        CTable[0] = new Array(3);
+        CTable[1] = new Array(3);
+        CTable[2] = new Array(3);
+
+    var DTable = new Array(3);
+        DTable[0] = new Array(3);
+        DTable[1] = new Array(3);
+        DTable[2] = new Array(3);
+
+    var FTable = new Array(3);
+        FTable[0] = new Array(3);
+        FTable[1] = new Array(3);
+        FTable[2] = new Array(3);
+
+ 
+    function getStudentInfo() // this function gathers the user's information
+    {
+      for (i = 0; i < studentFullName.length; i++) 
+      {
+        studentFullName[i] = window.prompt("Enter full name", "First name then last name");
+        if (studentFullName[i] == "stop")
+        {
+          totalStudents = parseInt(i);
+          break;
+        }
+        studentAge[i] = parseInt(window.prompt("Enter age", "0"));
+        if (studentAge[i] < 20)
+          ageBelow20++;
+        if (studentAge[i] >= 20 && studentAge[i] < 30)
+          ageBelow30++;
+        if (studentAge[i] >= 30 && studentAge[i] < 40)
+          ageBelow40++;
+        if (studentAge[i] >= 40)
+          ageAbove40++;
+  
+        studentGrade[i] = parseInt(window.prompt("Enter grade", "0"));
+        
+        totalStudentGrade = totalStudentGrade + studentGrade[i]; 
+
+        if (studentGrade[i] <= 100 && studentGrade[i] >= 90) {
+          AStudents++;
+          ATable[i] = [studentFullName[i], studentAge[i], studentGrade[i]];
+        }
+        if (studentGrade[i] <= 89 && studentGrade[i] >= 80) {
+          BStudents++;
+          BTable = [studentFullName[i], studentAge[i], studentGrade[i]];
+        }
+        if (studentGrade[i] <= 79 && studentGrade[i] >= 70) {
+          CStudents++;
+          CTable = [studentFullName[i], studentAge[i], studentGrade[i]];
+        }
+        if (studentGrade[i] <= 69 && studentGrade[i] >= 60) {
+          DStudents++;
+          DTable = [studentFullName[i], studentAge[i], studentGrade[i]];
+        }
+        if (studentGrade[i] <= 59) {
+          FStudents++;
+          FTable = [studentFullName[i], studentAge[i], studentGrade[i]];
+        }
+        failedStudents = parseInt(DStudents) + parseInt(FStudents); 
+        
+        
+      }
+
+
+    for (i = 0; i < 1; i++) {
+      document.writeln("Total Students with A's<BR>");
+      document.writeln("Name ", " Age ", " Grade<BR>");
+      document.writeln(ATable[i, 0] + " ");
+      document.writeln(ATable[i, 1] + " ");
+      document.writeln(ATable[i, 2] + "<BR><BR>");
+}
+
+      for (i = 0; i < 1; i++) {
+        document.writeln("Total Students with B's<BR>");
+        document.writeln("Name ", " Age ", " Grade<BR>");
+        document.writeln(BTable[i, 0] + " ");
+        document.writeln(BTable[i, 1] + " ");
+        document.writeln(BTable[i, 2] + "<BR><BR>");
+}
+
+for (i = 0; i < 1; i++) {
+document.writeln("Total Students with C's<BR>");
+        document.writeln("Name ", " Age ", " Grade<BR>");
+        document.writeln(CTable[i, 0] + " ");
+        document.writeln(CTable[i, 1] + " ");
+        document.writeln(CTable[i, 2] + "<BR><BR>");
+}
+
+for (i = 0; i < 1; i++) {
+document.writeln("Total Students with D's<BR>");
+        document.writeln("Name ", " Age ", " Grade<BR>");
+        document.writeln(DTable[i, 0] + " ");
+        document.writeln(DTable[i, 1] + " ");
+        document.writeln(DTable[i, 2] + "<BR><BR>");
+}
+
+for (i = 0; i < 1; i++) {
+document.writeln("Total Students who failed<BR>");
+        document.writeln("Name ", " Age ", " Grade<BR>");
+        document.writeln(FTable[i, 0] + " ");
+        document.writeln(FTable[i, 1] + " ");
+        document.writeln(FTable[i, 2] + "<BR><BR>");
+}
+
+      document.writeln("Total number of students = " + totalStudents + "<BR>");
+      avgGrade += totalStudentGrade / totalStudents;
+      document.writeln("Class average = " + avgGrade + " %<BR><BR>");
+
+      document.writeln("Number of Students under 20 years old = " + ageBelow20 + "<BR>");
+      document.writeln("Number of Students under 30 years old = " + ageBelow30 + "<BR>");
+      document.writeln("Number of Students under 40 years old = " + ageBelow40 + "<BR>");
+      document.writeln("Number of Students Above 40 years old = " + ageAbove40 + "<BR><BR>");
+
+      document.writeln("Total students with grades less than 70 = " + failedStudents + "<BR>");
+      document.writeln("Total students with grades between 70 and 80 = " + CStudents + "<BR>");
+      document.writeln("Total students with grades between 80 and 90 = " + BStudents + "<BR>");
+      document.writeln("Total students with grades between 90 and 100 = " + AStudents + "<BR><BR>");
+
+
+
+
+      
+    }   
+    
+  </SCRIPT>
+</HEAD>
+
+<BODY ONLOAD = "getStudentInfo()">
+  
+</HTML>

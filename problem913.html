@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<!-- problem 9-13 -->
+
+<HEAD>
+<TITLE>Saleperson's Earnings For The Week </TITLE>
+
+
+<SCRIPT LANGUAGE = "JavaScript">
+      var gross = 0.0;
+      var earnings;
+      var product = 0;
+      var number;
+      var input;
+   
+   while ( product < 4 ) {
+      ++product;
+         
+     
+      input = window.prompt( "Enter number sold of product #" + product + ":", "0" );
+               
+      number = parseInt( input );
+
+
+      if ( product == 1 )
+         gross += number * 239.99;
+      else if ( product == 2 )
+         gross += number * 129.75;
+      else if ( product == 3 )
+         gross += number * 99.95;
+      else if ( product == 4 )
+         gross += number * 350.89;
+   }     
+
+   earnings = .09 * gross + 200;
+   
+   document.writeln( "<H3>THIS SALESPERSON EARNED FOR THIS WEEK $ " + earnings + "</H3>");
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<BR>
+<BR>
+<P><H5><font color = 'red'>Created by Colleen Kujawa</H5></font></P>
+<P><H5><font color = 'red'>CIS338 Monday 6:10pm - 9:00pm</H5></font></P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<!-- problem 12-16 -->
+
+<HEAD>
+<TITLE>Colleen kujawa - problem 12-16</TITLE>
+
+<SCRIPT LANGUAGE = "JavaScript">
+   var WON = 0, LOST = 1, CONTINUE_ROLLING =2;  
+   var firstRoll = true,               
+       sumOfDice = 0,                
+       myPoint = 0,   
+       gameStatus = CONTINUE_ROLLING;  
+
+   
+   function play()
+   {
+      if ( firstRoll ) {            
+         sumOfDice = rollDice();        
+   
+         switch ( sumOfDice ) {
+           case 7: case 11:           
+           gameStatus = WON;
+           craps.point.value = ""; 
+           break;
+           
+	   case 2: case 3: case 12:  
+           gameStatus = LOST;
+           craps.point.value = ""; 
+           break;
+
+           default:                  
+           gameStatus = CONTINUE_ROLLING;
+           myPoint = sumOfDice;
+           craps.point.value = myPoint; 
+           firstRoll = false;
+         }
+      }
+      else {
+         sumOfDice = rollDice();
+      
+         if ( sumOfDice == myPoint )    
+         gameStatus = WON;
+         
+	 else
+         if ( sumOfDice == 7 )      
+         gameStatus = LOST;
+      }
+
+      if ( gameStatus == CONTINUE_ROLLING )
+         window.status = "Roll again";
+      else {
+         if ( gameStatus == WON )
+         window.status = "Player wins. " +
+         "Click Roll Dice to play again.";
+         
+	 else 
+         window.status = "Player loses. " + 
+         "Click Roll Dice to play again.";
+         
+         firstRoll = true;
+      }
+   }
+   
+   function rollDice()
+   {
+      var die1, die2, workSum;   
+
+      die1 = Math.floor( 1 + Math.random() * 6 );
+      die2 = Math.floor( 1 + Math.random() * 6 );
+      workSum = die1 + die2;
+
+      craps.firstDie.value = die1;
+      craps.secondDie.value = die2;
+      craps.sum.value = workSum;
+
+      return workSum;
+   }
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<FORM NAME = "craps">
+   <TABLE BORDER = "1">
+   <TR><TD>Die 1</TD>
+       <TD><INPUT NAME = "firstDie" TYPE = "text"></TD></TR>
+   <TR><TD>Die 2</TD>
+       <TD><INPUT NAME = "secondDie" TYPE = "text"></TD></TR>
+   <TR><TD>Sum</TD>
+       <TD><INPUT NAME = "sum" TYPE = "text"></TD></TR>
+   <TR><TD>Point</TD>
+       <TD><INPUT NAME = "point" TYPE = "text"></TD></TR>
+   <TR><TD>GAMES WON</TD>
+       <TD><INPUT NAME = "" TYPE = "text"></TD></TR>
+   <TR><TD>GAMES LOST</TD>
+       <TD><INPUT NAME = "" TYPE = "text"></TD></TR>
+   <TR><TD>WHAT ARE THE CHANCES OF WINNING CRAPS?</TD>
+       <TD><INPUT NAME = "" TYPE = "text"></TD></TR>
+   <TR><TD>AVERAGE LENGTH OF THE GAME</TD>
+       <TD><INPUT NAME = "" TYPE = "text"></TD></TR>
+   <TR><TD>CHANCES OF WINNING IMPROVE THE LONGER YOU PLAY?</TD>
+       <TD><INPUT NAME = "" TYPE = "text"></TD></TR>
+   <TR><TD><INPUT TYPE = "button" VALUE = "Roll Dice" 
+                  ONCLICK = "play()"></TD></TR>
+    
+   </TABLE>
+</FORM>
+<BR>
+<BR>
+<P><H5><font color = 'red'>Created by Colleen Kujawa</H5></font></P>
+<P><H5><font color = 'red'>CIS338 Monday 6:10pm - 9:00pm</H5></font></P>
+</BODY>
+</HTML>
+
+
+
+</BODY>
+</HTML>
+

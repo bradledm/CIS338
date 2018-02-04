@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+<TITLE>Chapter 12 made up problem</TITLE>
+
+<SCRIPT language=JavaScript>
+
+
+var a = new Array (5);   
+
+
+                   
+
+intitializeArray(a);     
+
+
+
+
+function intitializeArray(Array1)   
+  {
+    for( var i = 0; i < Array1.length; i++ )  
+    Array1[i] = " ";                          
+  }
+
+
+function Start(Array1)   
+   {
+     var RandomString = 0;  
+
+
+
+    for( var x = 0; x < Array1.length; x++ )      
+       Array1[x] = window.prompt ("Enter Sentence", "0");  
+
+       RandomString = Math.floor(1 + Math.random() * 3) -1;  
+
+       document.writeln("<TABLE BORDER = '1' WIDTH = '100%'>");
+       document.writeln("<TR><TD><B>Randomly Displayed String</B></TD></TR>");
+       document.writeln("<TR><TD>" + Array1[RandomString] + "</TD></TR>");
+       document.writeln("</TABLE>");
+
+   }
+
+
+
+
+
+
+// Main Body
+</SCRIPT>
+
+</HEAD>
+<BODY >
+<CENTER>
+<FORM name=myform method=get>
+    <INPUT onclick=Start(a) type=button value=Start for object button form> 
+
+    <INPUT onfocus="javascript:this.value='';" size=25 value=" Press Start to Begin " name=box  text> 
+</FORM>
+</CENTER>
+</BODY>
+</HTML>

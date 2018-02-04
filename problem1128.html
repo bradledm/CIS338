@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<!-- Problem 11-28 -->
+
+<HEAD>
+<TITLE>Colleen Kujawa</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+      var heads = 0, tails = 0, flip;
+   function play ()   {
+   for ( var toss = 1; toss <=2; ++toss ) {
+      flip = Math.floor( 1 + Math.random() * 2);
+
+      switch ( flip ) {
+         case 1:
+            ++heads;
+            break;
+         case 2:
+            ++tails;
+            break;
+       
+      }
+   }
+}
+   document.writeln( "<TABLE BORDER = '1' WIDTH = '40%'>" );
+   document.writeln( "<TR><TD><B>heads or tails</B></TD>" +                         
+                     "<TD><B>toss</B></TD></TR>" );
+   document.writeln( "<TR><TD>heads</TD><TD>" +heads + 
+                     "</TD></TR>" );
+   document.writeln( "<TR><TD>tails</TD><TD>" + tails + 
+                     "</TD></TR></TABLE>" );
+  
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<FORM NAME = "TOSS">
+<INPUT TYPE = "button" Value = "toss" 
+	       ONCLICK = "play()">
+</FORM>
+
+
+<BR>
+<BR>
+<P><H5><font color = 'green'>Created by Colleen Kujawa</H5></font></P>
+<P><H5><font color = 'green'>CIS338 Monday 6:10pm - 9:00pm</H5></font></P>
+</BODY>
+</HTML>
+
+
+
+
+
+

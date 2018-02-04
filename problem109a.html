@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><TITLE>Solution 10.09</TITLE>
+
+<SCRIPT LANGUAGE = "JavaScript">
+   document.writeln( "<TABLE BORDER = '1' WIDTH = '100%'>" );
+   document.writeln( "<TR><TD WIDTH = '100'><B>Year</B></TD>" );
+   document.writeln( "<TD><B>Amount on deposit</B></TD>" ); 	
+   document.writeln( "<TD><B>Interest Rate</B></TD></TR>" ); 	
+
+   for ( var interestRate = 5; interestRate <= 10; interestRate++ ) {
+      var rate = interestRate / 100.0;
+
+      for ( var year = 1; year <= 10; year++ ) {
+         var principal = 1000.0;
+         var amount = principal * Math.pow( 1.0 + rate, year );
+         document.writeln( "<TR><TD>" + year + "</TD><TD>" +
+            Math.round( amount * 100 ) / 100 + "</TD><TD>" +
+            rate + "</TD></TR>" );
+      }
+   }
+   document.writeln( "</TABLE>" );	
+</SCRIPT>
+
+</HEAD><BODY></BODY>
+</HTML>
+<!-- 
+ ************************************************************************** 
+ * (C) Copyright 2000 by Deitel & Associates, Inc. and Prentice Hall.     *
+ * All Rights Reserved.                                                   *
+ *                                                                        *
+ * DISCLAIMER: The authors and publisher of this book have used their     *
+ * best efforts in preparing the book. These efforts include the          *
+ * development, research, and testing of the theories and programs        *
+ * to determine their effectiveness. The authors and publisher make       *
+ * no warranty of any kind, expressed or implied, with regard to these    *
+ * programs or to the documentation contained in these books. The authors *
+ * and publisher shall not be liable in any event for incidental or       *
+ * consequential damages in connection with, or arising out of, the       *
+ * furnishing, performance, or use of these programs.                     *
+ **************************************************************************
+-->

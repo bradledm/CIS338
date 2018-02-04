@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<!-- Problem 10-21 -->
+
+<HEAD>
+<TITLE>Colleen Kujawa</TITLE>
+
+<SCRIPT LANGUAGE = "JavaScript">
+
+   var row, rate = 1, stars = 1, spaces, i;
+
+   spaces = 5; 
+
+   document.write( "<PRE>" );
+
+   for ( row = 1; row <= 9; row++ ) {
+   
+      for ( i = 1; i < spaces; i++ ) {
+         document.write( " " );
+      }
+      for ( i = 1; i <= stars; i++ ) {
+         document.write( "*" );
+      } 
+      document.write( "<BR>" );
+
+      if ( row == 5 )  
+         rate *= -1;
+
+      stars += ( 2 * rate );
+      spaces -= rate;
+
+   }
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<P><H5><font color = 'red'>Created by Colleen Kujawa</H5></font></P>
+<P><H5><font color = 'red'>CIS338 Monday 6:10pm - 9:00pm</H5></font></P>
+</BODY>
+</HTML>
